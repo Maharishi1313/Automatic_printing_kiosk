@@ -1,0 +1,56 @@
+
+      
+      .login-block {
+        height: 1000px;
+        width:1500px;
+        background-image: url(641671-blockchain-wallpaper-top-free-blockchain-background.jpg);
+      
+      }
+      .part1 {
+        position: absolute;
+        background-color: rgb(94 119 141 / 33%);;
+        height: 250px;
+        width: 250px;
+        padding: 25px;
+        margin-top: 300px;
+        margin-left: 600px;
+      }
+      .input_box {
+        margin-top: 5px;
+        margin-bottom: 5px;
+        margin-left: 5px;
+        border-radius: 6px;
+        border-radius:10px;
+        border-style: solid;
+        color: rgb(0, 0, 6);
+        border-color:black ;
+        height:25px;
+        width: 220px;
+      }
+      .button-login { 
+        background-color: rgb(81, 230, 81);
+        border-color: rgb(2, 76, 2);
+        color: rgb(2, 76, 2);
+        border-style: solid;
+        margin-top: 10px;
+        margin-bottom: 8px;
+        margin-left: 43px;
+        font-size: 20px;
+        padding: 5px;
+        width:150px ;
+      }
+      .button-login:hover {
+        background-color: rgb(2, 76, 2); 
+        color: white;
+        opacity: 0.8;
+      }
+      .homepagediv {
+        margin-right: 510px;
+        margin-left: 510px;
+        background-color: aliceblue;
+        font-size: 23px;
+        font-family: 'Merriweather';
+        padding: 24px;
+        align-items: center;
+        
+      }

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      registration
+    </title>
+    <link rel="stylesheet" href="reg_style.css">
+  </head>
+  <body style="margin-top: 0px;
+  margin-right: 0px;
+  margin-left: 0px;">
+    <div id="login-page" class="login-block">
+      <div class="part1">
+        <p style="font-size: 35px;
+        color: black;
+        padding-left: 40px;
+        margin-top: 0px;
+        margin-bottom: 0px;">SIGN UP</p>
+        <input class="input_box" type="text" id="username" name="username" placeholder="username" />
+        <input class="input_box" type="email" id="email" name="email" placeholder="E-mail"/>
+        <input class="input_box" type="password" id="password" name="password" placeholder="password"/>
+        <input  class="button-login" type="submit" id="signUp" name="signup-submit" value="Sign up">
+        <a href="log_in copy.html" target="_blank">
+        <button class="button-login">Sign in</button>
+      </a>
+      </div>
+    </div>
+    </body>
+    <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+    import  { getDatabase, set, ref } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
+    import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyAn_m7r28H01CbYHXMngaUbSK4xYPYyiEY",
+      authDomain: "fitcoinauth.firebaseapp.com",
+      databaseURL: "https://fitcoinauth-default-rtdb.firebaseio.com",
+      projectId: "fitcoinauth",
+      storageBucket: "fitcoinauth.appspot.com",
+      messagingSenderId: "521509993172",
+      appId: "1:521509993172:web:1ab67024e7dcf884bc1941"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const database = getDatabase(app);
+    const auth = getAuth();
+  signUp.addEventListener('click',(e) =>{
+    var email = document.getElementById('email').value;
+    var password = document.getElementById('password').value;
+    var username = document.getElementById('username').value;
+
+
+    createUserWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    // Signed up 
+    const user = userCredential.user;
+    set(ref(database, 'users/' + user.uid),{
+      username: username,
+      email: email
+
+    })
+    alert('user created');
+    // ...
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    alert(errorMessage);
+    // ..
+  });
+
+  })
+
+  </script>
+</html>
